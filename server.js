@@ -18,7 +18,7 @@ app.get("/notes", (req, res) => res.sendFile(path.join(__dirname, "./public/note
 app.get("/api/notes", (req, res) => res.json(dbData));
 
 app.post("/api/notes", (req, res) => {
-    // no need for this new object because the outcome is the same as the req.body
+
     const newNote = { title: req.body.title, text: req.body.text, id: uuid() }
 
     dbData.push(newNote);
@@ -30,14 +30,48 @@ app.post("/api/notes", (req, res) => {
     res.json(dbData);
 })
 
+
+
+
+// // POST request to add a review
+// // NOTE: Data persistence isn't set up yet, so this will only exist in memory until we implement it
+// app.post('/api/notes', (req, res) => {
+//     // Log that a POST request was received
+//     console.info(`${req.method} request received to add a note`);
+
+//     // Destructuring assignment for the items in req.body
+//     const { text, title } = req.body;
+
+//     // If all the required properties are present
+//     if (text && title) {
+//       // Variable for the object we will save
+//       const newNote = {
+//         text,
+//         title,
+//         noteID: uuid(),
+//       };
+
+//       const response = {
+//         status: 'success',
+//         body: newNote,
+//       };
+
+//       console.log(response);
+//       res.status(201).json(response);
+//     } else {
+//       res.status(500).json('Error in posting note');
+//     }
+//   });
+
+
+
+
+
 app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "./public/index.html"));
 })
 
 app.delete("/api/notes/:id", (req, res) => {
-    // const newArray = dbData.filter(note => {
-    //     if (note.id !== req.params.id) return true
-    // })
 
     for (let i = 0; i < dbData.length; i++) {
         if (dbData[i].id == req.params.id) {

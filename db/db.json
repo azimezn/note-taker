@@ -1,29 +1,17 @@
 [
 	{
-		"title": "Test Title",
-		"text": "Test text"
+		"title": "title of a note",
+		"text": "text of a note hihi",
+		"id": "d56d"
 	},
 	{
-		"title": "Test Title",
-		"text": "Test text"
+		"title": "more notes",
+		"text": "here are some more notes",
+		"id": "b69a"
 	},
 	{
-		"title": "Test Title",
-		"text": "Test text"
-	},
-	{
-		"title": "Test Title",
-		"text": "Test text",
-		"id": "c63c"
-	},
-	{
-		"title": "Test Title",
-		"text": "Test text",
-		"id": "f46c"
-	},
-	{
-		"title": "Test Title",
-		"text": "Test text",
-		"id": "033b"
+		"title": "delete me",
+		"text": "go ahead, just delete me",
+		"id": "11f8"
 	}
 ]
