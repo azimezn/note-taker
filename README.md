@@ -19,7 +19,9 @@ A note application where you can create new notes, read previous notes, and dele
 
 After clicking on "notes" on the main page, you can add, delete, or read notes.
 
-![screenshot of the team member generator](./dist/assets/images/screenshot.png)
+https://azimezn.github.io/note-taker/
+
+![screenshot of the note taker application](./assets/images/screenshot.png)
 
 ## Credits
 
