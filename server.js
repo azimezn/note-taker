@@ -23,6 +23,9 @@ app.get("/api/notes", (req, res) => res.json(dbData));
 // post the user input as a new note
 app.post("/api/notes", (req, res) => {
 
+    // Log that a POST request was received
+    console.info(`${req.method} request received to add a note`);
+
     // new note consists of the title, text, and id
     const newNote = { title: req.body.title, text: req.body.text, id: uuid() }
 
@@ -46,6 +49,9 @@ app.get("*", (req, res) => {
 // delete the note chosen by the user. the button is connected through html, but deleted according to the idea through the back end
 app.delete("/api/notes/:id", (req, res) => {
 
+    // Log that a DELETE request was received
+    console.info(`${req.method} request received to delete a note`);
+
     // loop through each id and remove the one that matches the chosen id
     for (let i = 0; i < dbData.length; i++) {
         if (dbData[i].id == req.params.id) {
@@ -66,35 +72,3 @@ app.delete("/api/notes/:id", (req, res) => {
 app.listen(PORT, () =>
     console.log(`Example app listening at http://localhost:${PORT}`)
 );
-
-
-
-
-
-// app.post('/api/notes', (req, res) => {
-//     // Log that a POST request was received
-//     console.info(`${req.method} request received to add a note`);
-
-//     // Destructuring assignment for the items in req.body
-//     const { text, title } = req.body;
-
-//     // If all the required properties are present
-//     if (text && title) {
-//       // Variable for the object we will save
-//       const newNote = {
-//         text,
-//         title,
-//         noteID: uuid(),
-//       };
-
-//       const response = {
-//         status: 'success',
-//         body: newNote,
-//       };
-
-//       console.log(response);
-//       res.status(201).json(response);
-//     } else {
-//       res.status(500).json('Error in posting note');
-//     }
-//   });
