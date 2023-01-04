@@ -19,7 +19,7 @@ A note application where you can create new notes, read previous notes, and dele
 
 After clicking on "notes" on the main page, you can add, delete, or read notes.
 
-https://azimezn.github.io/note-taker/
+https://note-taker-an.herokuapp.com/
 
 ![screenshot of the note taker application](./assets/images/screenshot.png)
 
